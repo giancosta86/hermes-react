@@ -1,0 +1,21 @@
+.pinyin {
+  &.flat {
+    color: #1e9606;
+  }
+
+  &.rising {
+    color: #c96411;
+  }
+
+  &.falling-rising {
+    color: #0465c0;
+  }
+
+  &.falling {
+    color: #9105aa;
+  }
+
+  &.neuter {
+    color: #646464;
+  }
+}
