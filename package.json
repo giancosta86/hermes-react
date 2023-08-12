@@ -1,6 +1,6 @@
 {
   "name": "@giancosta86/hermes-react",
-  "version": "1.0.0-rc.1",
+  "version": "1.0.0",
   "description": "Elegant i18n for React in TypeScript",
   "keywords": [
     "React",
