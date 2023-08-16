@@ -1,16 +1,16 @@
 import React, { useMemo } from "react";
 import { MetadataByChar } from "./Metadata";
-import { AnnotatedChar } from "./AnnotatedChar";
+import { DecoratedChar } from "./DecoratedChar";
 
-export interface AnnotatedParagraphProps {
+export interface DecoratedParagraphProps {
   text: string;
   metadataByChar: MetadataByChar;
 }
 
-export const AnnotatedParagraph = ({
+export const DecoratedParagraph = ({
   text,
   metadataByChar
-}: AnnotatedParagraphProps) => {
+}: DecoratedParagraphProps) => {
   const chars = useMemo(() => text.split(""), [text]);
 
   return (
@@ -22,8 +22,8 @@ export const AnnotatedParagraph = ({
 
         const metadata = metadataByChar.get(char);
 
-        return metadata ? (
-          <AnnotatedChar key={index} char={char} metadata={metadata} />
+        return metadata && (metadata.annotation || metadata.className) ? (
+          <DecoratedChar key={index} char={char} metadata={metadata} />
         ) : (
           <React.Fragment key={index}>{char}</React.Fragment>
         );

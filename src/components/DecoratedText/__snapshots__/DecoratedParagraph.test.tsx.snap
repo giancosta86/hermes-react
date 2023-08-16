@@ -1,0 +1,221 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DecoratedParagraph> when receiving a paragraph with multiple characters having annotation and classes should render such characters with <ruby> tags having classes 1`] = `
+[
+  "我",
+  "爱",
+  <ruby
+    className="non-latin logogram chinese pinyin falling"
+  >
+    看
+    <rp>
+      (
+    </rp>
+    <rt>
+      kàn
+    </rt>
+    <rp>
+      )
+    </rp>
+  </ruby>,
+  <ruby
+    className="non-latin logogram chinese pinyin flat"
+  >
+    书
+    <rp>
+      (
+    </rp>
+    <rt>
+      shū
+    </rt>
+    <rp>
+      )
+    </rp>
+  </ruby>,
+  "，",
+  "你",
+  <ruby
+    className="non-latin logogram chinese pinyin neuter"
+  >
+    呢
+    <rp>
+      (
+    </rp>
+    <rt>
+      ne
+    </rt>
+    <rp>
+      )
+    </rp>
+  </ruby>,
+  "？",
+]
+`;
+
+exports[`<DecoratedParagraph> when receiving a paragraph with multiple characters having annotation and/or classes, as well as newlines should render everything in a suitable way 1`] = `
+[
+  "我",
+  <br />,
+  "爱",
+  <ruby>
+    看
+    <rp>
+      (
+    </rp>
+    <rt>
+      kàn
+    </rt>
+    <rp>
+      )
+    </rp>
+  </ruby>,
+  <ruby
+    className="non-latin logogram chinese pinyin flat"
+  >
+    书
+    <rp>
+      (
+    </rp>
+    <rt>
+      shū
+    </rt>
+    <rp>
+      )
+    </rp>
+  </ruby>,
+  "，",
+  <br />,
+  "你",
+  <span
+    className="non-latin logogram chinese pinyin neuter"
+  >
+    呢
+  </span>,
+  "？",
+]
+`;
+
+exports[`<DecoratedParagraph> when receiving a paragraph with multiple intermediate newlines should render every newline as a <br/> 1`] = `
+[
+  "A",
+  "l",
+  "p",
+  "h",
+  "a",
+  <br />,
+  "B",
+  "e",
+  "t",
+  "a",
+  <br />,
+  "G",
+  "a",
+  "m",
+  "m",
+  "a",
+]
+`;
+
+exports[`<DecoratedParagraph> when receiving a paragraph with no metadata should render just plain characters 1`] = `
+[
+  "D",
+  "o",
+  "d",
+  "o",
+]
+`;
+
+exports[`<DecoratedParagraph> when receiving a paragraph with one character having annotation and classes should render that character with a <ruby> tag having classes 1`] = `
+[
+  "我",
+  "爱",
+  "看",
+  <ruby
+    className="non-latin logogram chinese pinyin flat"
+  >
+    书
+    <rp>
+      (
+    </rp>
+    <rt>
+      shū
+    </rt>
+    <rp>
+      )
+    </rp>
+  </ruby>,
+  "，",
+  "你",
+  "呢",
+  "？",
+]
+`;
+
+exports[`<DecoratedParagraph> when receiving a paragraph with one character having annotation but no classes should render that character with a classless <ruby> tag 1`] = `
+[
+  "我",
+  "爱",
+  "看",
+  <ruby>
+    书
+    <rp>
+      (
+    </rp>
+    <rt>
+      shū
+    </rt>
+    <rp>
+      )
+    </rp>
+  </ruby>,
+  "，",
+  "你",
+  "呢",
+  "？",
+]
+`;
+
+exports[`<DecoratedParagraph> when receiving a paragraph with one character having classes but no annotation should render that character with a <span> tag 1`] = `
+[
+  "我",
+  "爱",
+  "看",
+  <span
+    className="non-latin logogram chinese pinyin flat"
+  >
+    书
+  </span>,
+  "，",
+  "你",
+  "呢",
+  "？",
+]
+`;
+
+exports[`<DecoratedParagraph> when receiving a paragraph with one character having neither annotation nor classes should render that character with no tags 1`] = `
+[
+  "我",
+  "爱",
+  "看",
+  "书",
+  "，",
+  "你",
+  "呢",
+  "？",
+]
+`;
+
+exports[`<DecoratedParagraph> when receiving a paragraph with one intermediate newline should render the newline as a <br/> 1`] = `
+[
+  "A",
+  "l",
+  "p",
+  "h",
+  "a",
+  <br />,
+  "B",
+  "e",
+  "t",
+  "a",
+]
+`;

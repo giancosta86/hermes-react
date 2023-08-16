@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DecoratedChar> when receiving a character with annotation and classes should render a <ruby> tag having classes 1`] = `
+<ruby
+  className="alpha beta"
+>
+  A
+  <rp>
+    (
+  </rp>
+  <rt>
+    shū
+  </rt>
+  <rp>
+    )
+  </rp>
+</ruby>
+`;
+
+exports[`<DecoratedChar> when receiving a character with annotation only should render a classless <ruby> tag 1`] = `
+<ruby>
+  A
+  <rp>
+    (
+  </rp>
+  <rt>
+    shū
+  </rt>
+  <rp>
+    )
+  </rp>
+</ruby>
+`;
+
+exports[`<DecoratedChar> when receving a character with classes and no annotation should render a <span> with classes 1`] = `
+<span
+  className="alpha beta"
+>
+  A
+</span>
+`;

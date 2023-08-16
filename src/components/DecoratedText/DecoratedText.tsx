@@ -1,13 +1,13 @@
 import React, { useMemo } from "react";
 import { MetadataByChar } from "./Metadata";
-import { AnnotatedParagraph } from "./AnnotatedParagraph";
+import { DecoratedParagraph } from "./DecoratedParagraph";
 
-export interface AnnotatedTextProps {
+export interface DecoratedTextProps {
   text: string;
   metadataByChar: MetadataByChar;
 }
 
-export const AnnotatedText = ({ text, metadataByChar }: AnnotatedTextProps) => {
+export const DecoratedText = ({ text, metadataByChar }: DecoratedTextProps) => {
   const paragraphs = useMemo(
     () =>
       text
@@ -22,7 +22,7 @@ export const AnnotatedText = ({ text, metadataByChar }: AnnotatedTextProps) => {
     <>
       {paragraphs.map((paragraph, index) => (
         <p key={index}>
-          <AnnotatedParagraph
+          <DecoratedParagraph
             text={paragraph}
             metadataByChar={metadataByChar}
           />

@@ -1,0 +1,155 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DecoratedText> when receiving sophisticated text with different types of metadata and different blocks of newlines should render it correctly 1`] = `
+[
+  <p>
+    A
+    l
+    p
+    h
+    a
+    1
+    <br />
+    A
+    l
+    p
+    h
+    a
+    2
+  </p>,
+  <p>
+    B
+    e
+    t
+    a
+    1
+    <br />
+    <ruby
+      className="non-latin logogram chinese pinyin falling-rising"
+    >
+      我
+      <rp>
+        (
+      </rp>
+      <rt>
+        wǒ
+      </rt>
+      <rp>
+        )
+      </rp>
+    </ruby>
+    <ruby>
+      看
+      <rp>
+        (
+      </rp>
+      <rt>
+        kàn
+      </rt>
+      <rp>
+        )
+      </rp>
+    </ruby>
+    <span
+      className="non-latin logogram chinese pinyin flat"
+    >
+      书
+    </span>
+    <br />
+    B
+    e
+    t
+    a
+    3
+    <br />
+    B
+    e
+    t
+    a
+    4
+  </p>,
+  <p>
+    G
+    a
+    m
+    m
+    a
+  </p>,
+]
+`;
+
+exports[`<DecoratedText> when receiving text with leading and trailing space and no metadata should trim the text and render just plain characters in a single paragraph 1`] = `
+<p>
+  D
+  o
+  d
+  o
+</p>
+`;
+
+exports[`<DecoratedText> when receiving text with long sequences of intermediate newlines should ignore additional newlines 1`] = `
+[
+  <p>
+    A
+    l
+    p
+    h
+    a
+  </p>,
+  <p>
+    B
+    e
+    t
+    a
+  </p>,
+  <p>
+    G
+    a
+    m
+    m
+    a
+  </p>,
+]
+`;
+
+exports[`<DecoratedText> when receiving text with multiple intermediate carriageReturn + lineFeed should ignore carriage returns 1`] = `
+<p>
+  A
+  l
+  p
+  h
+  a
+  <br />
+  B
+  e
+  t
+  a
+  <br />
+  G
+  a
+  m
+  m
+  a
+</p>
+`;
+
+exports[`<DecoratedText> when receiving text with no newlines should just render it in a single paragraph 1`] = `
+<p>
+  我
+  看
+  <ruby
+    className="non-latin logogram chinese pinyin flat"
+  >
+    书
+    <rp>
+      (
+    </rp>
+    <rt>
+      shū
+    </rt>
+    <rp>
+      )
+    </rp>
+  </ruby>
+</p>
+`;
