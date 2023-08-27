@@ -30,7 +30,7 @@
     "clean": "rimraf dist coverage giancosta86-*.tgz",
     "clean:all": "yarn clean && rimraf node_modules",
     "format": "prettier --write .",
-    "prepack": "yarn check-all && yarn build",
+    "prepack": "yarn check-all && yarn build && yarn prune-dist",
     "check-all": "yarn check-format && yarn lint && yarn test",
     "check-format": "prettier --check .",
     "lint": "eslint . --ext .js,.ts,.jsx,.tsx,.cjs,.mjs",
@@ -40,6 +40,7 @@
     "build": "yarn compile-ts && yarn compile-sass",
     "compile-ts": "tsc",
     "compile-sass": "sass src/styles/index.scss:dist/index.css",
+    "prune-dist": "rimraf -g 'dist/test/' 'dist/**/*.test.*'",
     "watch": "concurrently \"yarn compile-ts --watch\" \"yarn compile-sass --watch\""
   },
   "dependencies": {
@@ -72,7 +73,7 @@
     "react-dom": ">=17"
   },
   "engines": {
-    "node": ">=16.16.0"
+    "node": ">=18.17.1"
   },
   "publishConfig": {
     "access": "public"
