@@ -2,14 +2,14 @@ import React from "react";
 import { create } from "react-test-renderer";
 import { HashMap } from "@rimbu/hashed";
 import { DecoratedParagraph } from "./DecoratedParagraph";
-import { Char, CharMetadata } from "./Metadata";
+import { Char, CharMetadata } from "./DecoratedChar";
 import { Pinyin } from "@/glyphs";
 
 describe("<DecoratedParagraph>", () => {
   describe("when receiving a paragraph with no metadata", () => {
     it("should render just plain characters", () => {
       const renderer = create(
-        <DecoratedParagraph text="Dodo" metadataByChar={HashMap.empty()} />
+        <DecoratedParagraph text="Dodo" charMetadataMap={HashMap.empty()} />
       );
 
       expect(renderer.toJSON()).toMatchSnapshot();
@@ -21,7 +21,7 @@ describe("<DecoratedParagraph>", () => {
       const renderer = create(
         <DecoratedParagraph
           text={"Alpha\nBeta"}
-          metadataByChar={HashMap.empty()}
+          charMetadataMap={HashMap.empty()}
         />
       );
 
@@ -34,7 +34,7 @@ describe("<DecoratedParagraph>", () => {
       const renderer = create(
         <DecoratedParagraph
           text={"Alpha\nBeta\nGamma"}
-          metadataByChar={HashMap.empty()}
+          charMetadataMap={HashMap.empty()}
         />
       );
 
@@ -47,7 +47,7 @@ describe("<DecoratedParagraph>", () => {
       const renderer = create(
         <DecoratedParagraph
           text={"我爱看书，你呢？"}
-          metadataByChar={HashMap.of<Char, CharMetadata>([
+          charMetadataMap={HashMap.of<Char, CharMetadata>([
             "书",
             { annotation: "shū", className: Pinyin.flat }
           ])}
@@ -63,7 +63,7 @@ describe("<DecoratedParagraph>", () => {
       const renderer = create(
         <DecoratedParagraph
           text={"我爱看书，你呢？"}
-          metadataByChar={HashMap.of<Char, CharMetadata>([
+          charMetadataMap={HashMap.of<Char, CharMetadata>([
             "书",
             { annotation: "shū" }
           ])}
@@ -79,7 +79,7 @@ describe("<DecoratedParagraph>", () => {
       const renderer = create(
         <DecoratedParagraph
           text={"我爱看书，你呢？"}
-          metadataByChar={HashMap.of<Char, CharMetadata>(["书", {}])}
+          charMetadataMap={HashMap.of<Char, CharMetadata>(["书", {}])}
         />
       );
 
@@ -92,7 +92,7 @@ describe("<DecoratedParagraph>", () => {
       const renderer = create(
         <DecoratedParagraph
           text={"我爱看书，你呢？"}
-          metadataByChar={HashMap.of<Char, CharMetadata>([
+          charMetadataMap={HashMap.of<Char, CharMetadata>([
             "书",
             { className: Pinyin.flat }
           ])}
@@ -108,7 +108,7 @@ describe("<DecoratedParagraph>", () => {
       const renderer = create(
         <DecoratedParagraph
           text={"我爱看书，你呢？"}
-          metadataByChar={HashMap.of<Char, CharMetadata>(
+          charMetadataMap={HashMap.of<Char, CharMetadata>(
             ["看", { annotation: "kàn", className: Pinyin.falling }],
             ["书", { annotation: "shū", className: Pinyin.flat }],
             ["呢", { annotation: "ne", className: Pinyin.neuter }]
@@ -125,7 +125,7 @@ describe("<DecoratedParagraph>", () => {
       const renderer = create(
         <DecoratedParagraph
           text={"我\n爱看书，\n你呢？"}
-          metadataByChar={HashMap.of<Char, CharMetadata>(
+          charMetadataMap={HashMap.of<Char, CharMetadata>(
             ["看", { annotation: "kàn" }],
             ["书", { annotation: "shū", className: Pinyin.flat }],
             ["呢", { className: Pinyin.neuter }]

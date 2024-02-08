@@ -1,6 +1,9 @@
 import React, { useMemo } from "react";
-import { MetadataByChar } from "./Metadata";
-import { DecoratedParagraph } from "./DecoratedParagraph";
+import { HashMap } from "@rimbu/hashed";
+import { CharMetadataMap, DecoratedParagraph } from "./DecoratedParagraph";
+import { Char, CharMetadata } from "./DecoratedChar";
+
+export type MetadataByChar = { [char: Char]: CharMetadata };
 
 export interface DecoratedTextProps {
   text: string;
@@ -8,6 +11,11 @@ export interface DecoratedTextProps {
 }
 
 export const DecoratedText = ({ text, metadataByChar }: DecoratedTextProps) => {
+  const charMetadataMap: CharMetadataMap = useMemo(
+    () => HashMap.from(Object.entries(metadataByChar)),
+    [metadataByChar]
+  );
+
   const paragraphs = useMemo(
     () =>
       text
@@ -24,7 +32,7 @@ export const DecoratedText = ({ text, metadataByChar }: DecoratedTextProps) => {
         <p key={index}>
           <DecoratedParagraph
             text={paragraph}
-            metadataByChar={metadataByChar}
+            charMetadataMap={charMetadataMap}
           />
         </p>
       ))}

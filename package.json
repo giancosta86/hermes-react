@@ -1,6 +1,6 @@
 {
   "name": "@giancosta86/hermes-react",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Elegant i18n for React in TypeScript",
   "keywords": [
     "React",
@@ -44,11 +44,11 @@
     "watch": "concurrently \"yarn compile-ts --watch\" \"yarn compile-sass --watch\""
   },
   "dependencies": {
-    "@rimbu/collection-types": "^1.1.0",
+    "@rimbu/collection-types": "^2",
+    "@rimbu/hashed": "^2",
     "classnames": "^2.3.2"
   },
   "devDependencies": {
-    "@rimbu/hashed": "^1.1.0",
     "@swc/core": "^1.3.76",
     "@swc/jest": "^0.2.29",
     "@types/jest": "^29.5.3",

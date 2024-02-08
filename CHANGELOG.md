@@ -1,5 +1,9 @@
 # Major changes
 
+## Version 3
+
+- `MetadataByChar` is no more a Rimbu map, but a plain object whose keys are each single character and whose values are of type `CharMetadata`
+
 ## Version 2
 
 - `AnnotatedText` renamed to `DecoratedText`

@@ -42,7 +42,7 @@ Once referenced the CSS stylesheet, if you start decorating characters with the 
 
 - `metadataByChar` - mapping each _decorated character_ to its typographic _metadata_
 
-where `metadataByChar` is any `RMap` (provided by the Rimbu library) whose entries have:
+where `metadataByChar` is just an object whose entries have:
 
 - for _key_, a single character that should be decorated
 

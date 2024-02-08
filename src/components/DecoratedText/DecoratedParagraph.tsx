@@ -1,15 +1,18 @@
 import React, { useMemo } from "react";
-import { MetadataByChar } from "./Metadata";
+import { RMap } from "@rimbu/collection-types";
+import { Char, CharMetadata } from "./DecoratedChar";
 import { DecoratedChar } from "./DecoratedChar";
+
+export type CharMetadataMap = RMap<Char, CharMetadata>;
 
 export interface DecoratedParagraphProps {
   text: string;
-  metadataByChar: MetadataByChar;
+  charMetadataMap: CharMetadataMap;
 }
 
 export const DecoratedParagraph = ({
   text,
-  metadataByChar
+  charMetadataMap
 }: DecoratedParagraphProps) => {
   const chars = useMemo(() => text.split(""), [text]);
 
@@ -20,7 +23,7 @@ export const DecoratedParagraph = ({
           return <br key={index} />;
         }
 
-        const metadata = metadataByChar.get(char);
+        const metadata = charMetadataMap.get(char);
 
         return metadata && (metadata.annotation || metadata.className) ? (
           <DecoratedChar key={index} char={char} metadata={metadata} />
