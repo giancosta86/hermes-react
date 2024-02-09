@@ -3,7 +3,7 @@ import { HashMap } from "@rimbu/hashed";
 import { CharMetadataMap, DecoratedParagraph } from "./DecoratedParagraph";
 import { Char, CharMetadata } from "./DecoratedChar";
 
-export type MetadataByChar = { [char: Char]: CharMetadata };
+export type MetadataByChar = Readonly<{ [char: Char]: CharMetadata }>;
 
 export interface DecoratedTextProps {
   text: string;
