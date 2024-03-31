@@ -1,0 +1,65 @@
+body {
+  font-family: "Arial", sans-serif;
+}
+
+@mixin palatalization($color) {
+  $border-radius: 10pt;
+
+  &.always-hard {
+    border: 1px solid $color;
+    border-radius: $border-radius;
+  }
+
+  &.always-soft {
+    border: 1px dashed $color;
+    border-radius: $border-radius;
+  }
+}
+
+p {
+  font-size: 50pt;
+  line-height: 120pt;
+  word-wrap: break-word;
+}
+
+.vowel {
+  &.hardening {
+    color: orange;
+  }
+
+  &.softening {
+    color: rgb(165, 0, 165);
+  }
+}
+
+.semiconsonant {
+  color: maroon;
+}
+
+.consonant {
+  &.voiced {
+    $voiced: rgb(14, 156, 14);
+
+    color: $voiced;
+
+    @include palatalization($voiced);
+  }
+
+  &.voiceless {
+    $voiceless: rgb(67, 67, 182);
+
+    color: $voiceless;
+
+    @include palatalization($voiceless);
+  }
+}
+
+.sign {
+  &.hardening {
+    color: rgb(94, 88, 88);
+  }
+
+  &.softening {
+    color: rgb(161, 149, 149);
+  }
+}
