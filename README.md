@@ -98,6 +98,23 @@ If you import the **stylesheet** provided by the library, the component will ren
 
 The `Glyph` namespace provides general-purpose class names - such as `latin`, `nonLatin`, `phonogram`, `logogram`, ..., which you can use to style your decorated characters.
 
+### Russian
+
+![Russian alphabet](./docs/russianAlphabet.png)
+
+Via the `Russian.metadataByChar` object, you can add _romanization_ to any Russian text - as well as a default set of fine-grained, stylable **CSS classes**:
+
+```typescript
+import { DecoratedText, Russian } from "@giancosta86/hermes-react";
+
+<DecoratedText
+  text="АаБбВвГгДдЕеЁёЖжЗзИиЙйКкЛлМмНнОоПпРрСсТтУуФфХхЦцЧчШшЩщЪъЫыЬьЭэЮюЯя"
+  metadataByChar={Russian.metadataByChar}
+/>;
+```
+
+Of course, should you need just the CSS classes instead of the romanization, you can simply create a custom copy of `Russian.metadataByChar` without the `annotation` field.
+
 ## See also
 
 - [hermes](https://github.com/giancosta86/hermes) - Minimalist i18n in TypeScript
