@@ -1,36 +1,23 @@
 import classnames from "classnames";
-import { Glyph } from "./Glyph";
+import * as Glyph from "./Glyph";
+import * as PinyinTone from "./PinyinTone";
 
-export namespace PinyinTone {
-  export const flat = "flat";
+const baseClasses = [
+  Glyph.nonLatin,
+  Glyph.logogram,
+  Glyph.chinese,
+  Glyph.pinyin
+] as const;
 
-  export const rising = "rising";
+export const flat = classnames(...baseClasses, PinyinTone.flat);
 
-  export const fallingRising = "falling-rising";
+export const rising = classnames(...baseClasses, PinyinTone.rising);
 
-  export const falling = "falling";
+export const fallingRising = classnames(
+  ...baseClasses,
+  PinyinTone.fallingRising
+);
 
-  export const neuter = "neuter";
-}
+export const falling = classnames(...baseClasses, PinyinTone.falling);
 
-export namespace Pinyin {
-  const baseClasses = [
-    Glyph.nonLatin,
-    Glyph.logogram,
-    Glyph.chinese,
-    Glyph.pinyin
-  ] as const;
-
-  export const flat = classnames(...baseClasses, PinyinTone.flat);
-
-  export const rising = classnames(...baseClasses, PinyinTone.rising);
-
-  export const fallingRising = classnames(
-    ...baseClasses,
-    PinyinTone.fallingRising
-  );
-
-  export const falling = classnames(...baseClasses, PinyinTone.falling);
-
-  export const neuter = classnames(...baseClasses, PinyinTone.neuter);
-}
+export const neuter = classnames(...baseClasses, PinyinTone.neuter);

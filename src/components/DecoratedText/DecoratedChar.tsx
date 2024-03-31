@@ -1,11 +1,5 @@
 import React from "react";
-
-export type Char = string;
-
-export type CharMetadata = Readonly<{
-  annotation?: string;
-  className?: string;
-}>;
+import { CharMetadata } from "@/Metadata";
 
 export interface DecoratedCharProps {
   char: string;

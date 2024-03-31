@@ -1,9 +1,6 @@
 import React, { useMemo } from "react";
-import { RMap } from "@rimbu/collection-types";
-import { Char, CharMetadata } from "./DecoratedChar";
+import { CharMetadataMap } from "@/Metadata";
 import { DecoratedChar } from "./DecoratedChar";
-
-export type CharMetadataMap = RMap<Char, CharMetadata>;
 
 export interface DecoratedParagraphProps {
   text: string;

@@ -1,3 +1,7 @@
-export * from "./Glyph";
+export * as Glyph from "./Glyph";
 
-export * from "./Pinyin";
+export * as Pinyin from "./Pinyin";
+
+export * as PinyinTone from "./PinyinTone";
+
+export * as Russian from "./russian";

@@ -1,8 +1,8 @@
 import React from "react";
 import { create } from "react-test-renderer";
 import { HashMap } from "@rimbu/hashed";
+import { Char, CharMetadata } from "@/Metadata";
 import { DecoratedParagraph } from "./DecoratedParagraph";
-import { Char, CharMetadata } from "./DecoratedChar";
 import { Pinyin } from "@/glyphs";
 
 describe("<DecoratedParagraph>", () => {

@@ -1,9 +1,7 @@
 import React, { useMemo } from "react";
 import { HashMap } from "@rimbu/hashed";
-import { CharMetadataMap, DecoratedParagraph } from "./DecoratedParagraph";
-import { Char, CharMetadata } from "./DecoratedChar";
-
-export type MetadataByChar = Readonly<{ [char: Char]: CharMetadata }>;
+import { CharMetadataMap, MetadataByChar } from "@/Metadata";
+import { DecoratedParagraph } from "./DecoratedParagraph";
 
 export interface DecoratedTextProps {
   text: string;
